@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Full Stack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+   <nav class="navbar">
+    <div class="logo">Learn Full Stack</div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-right" id="navMenu">
+        <input type="text" id="search" placeholder="Search courses..." onkeyup="searchCourse()">
+
+        <ul class="nav-links">
+            <li><a href="#" onclick="showPage('home'); toggleMenu()">Home</a></li>
+            <li><a href="#" onclick="showPage('courses'); toggleMenu()">Courses</a></li>
+            <li><a href="#" onclick="showPage('about'); toggleMenu()">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <!-- HOME PAGE -->
+    <section id="home" class="page active">
+
+        <div class="hero">
+            <h1>Master Full Stack Development</h1>
+            <p>Learn HTML, CSS, JavaScript, React and Node.js step by step</p>
+
+            <button class="btn-primary" onclick="showPage('courses')">
+                View Courses
+            </button>
+        </div>
+
+        <div class="features">
+
+            <div class="feature-box">
+                <h3>Beginner Friendly</h3>
+                <p>Simple and structured learning path.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Project Based</h3>
+                <p>Build real world applications.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Job Ready Skills</h3>
+                <p>Learn technologies used in industry.</p>
+            </div>
+
+        </div>
+
+        <div class="stats">
+            <div>
+                <h2>10+</h2>
+                <p>Courses</p>
+            </div>
+
+            <div>
+                <h2>100+</h2>
+                <p>Lessons</p>
+            </div>
+
+            <div>
+                <h2>5000+</h2>
+                <p>Students</p>
+            </div>
+
+            <div>
+                <h2>4.9★</h2>
+                <p>Ratings</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- COURSES PAGE -->
+    <section id="courses" class="page">
+
+        <div class="layout">
+
+            <div class="sidebar">
+                <h3>Categories</h3>
+                <ul>
+                    <li onclick="filterCourse('all')">All</li>
+                    <li onclick="filterCourse('frontend')">Frontend</li>
+                    <li onclick="filterCourse('backend')">Backend</li>
+                </ul>
+            </div>
+
+            <div class="content">
+
+                <h2>Available Courses</h2>
+
+                <div class="course-grid" id="courseGrid">
+
+                    <div class="course-card frontend" onclick="Course('HTML & CSS')">
+                        <img src="https://imgs.search.brave.com/xOxkIj440bupYHf6pSkwNODiygqrR6UfoLSgt33ky5c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzUyLzJl/LzZiLzUyMmU2YmMx/YTExZDE3MjZhMzVm/ODFjYmQ5NzkzOTVm/LmpwZw">
+                        <h3>HTML & CSS</h3>
+                        <p>Learn website design from scratch.</p>
+                    </div>
+
+                    <div class="course-card frontend" onclick="openCourse('JavaScript')">
+                        <img src="https://imgs.search.brave.com/yPdvhPRcf2pRIMxfZaadMhynGkwfogYQIfADl66Lnt4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI4/NDI3MTg3OC9waG90/by9qYXZhc2NyaXB0/LWluc2NyaXB0aW9u/LWFnYWluc3QtbGFw/dG9wLWFuZC1jb2Rl/LWJhY2tncm91bmQt/bGVhcm4tamF2YXNj/cmlwdC1wcm9ncmFt/bWluZy5qcGc_Yj0x/JnM9NjEyeDYxMiZ3/PTAmaz0yMCZjPWtw/UUNDYXhJQWN0R1FQ/OVRvVnJGTjNxUDU1/TU1YQTRTZG5vbXlt/ZHJfNjQ9">
+                        <h3>JavaScript</h3>
+                        <p>Become master in JavaScript.</p>
+                    </div>
+
+                    <div class="course-card backend" onclick="openCourse('Node.js')">
+                        <img src="https://imgs.search.brave.com/vulMVR8pTy8K_-pb-D8VMhFK04mYnz8yboNqW9ocFOI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM0/NzU0MjU5Mi9waG90/by9ub2RlLWpzLWlu/c2NyaXB0aW9uLWFn/YWluc3QtbGFwdG9w/LWFuZC1jb2RlLWJh/Y2tncm91bmQuanBn/P2I9MSZzPTYxMng2/MTImdz0wJms9MjAm/Yz1VNnZ4a04zSlc3/OUtOcHZBOGxzQU1n/TXluX0U5RGVaT0l2/Sm1DWndzczZRPQ">
+                        <h3>Node.js</h3>
+                        <p>Create backend applications.</p>
+                    </div>
+
+                    <div class="course-card frontend" onclick="openCourse('React.js')">
+                        <img src="https://imgs.search.brave.com/Kn7P48ONN44vHC7hvm2izmrgcuyxJ8uZx1nVo6LjdLA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM1/MTY2NTgxNS92aWRl/by9yZWFjdC1qcy13/aXRoLWRpZ2l0YWwt/dGVjaG5vbG9neS1o/aXRlY2gtY29uY2Vw/dC5qcGc_Yj0xJnM9/NjQweDY0MCZrPTIw/JmM9VjFYOTNLNVNi/WWQ5bGlJZGdrNVRQ/SkFMMVdZaS1FUGZx/UjNockhCN0VDaz0">
+                        <h3>React.js</h3>
+                        <p>Build modern web apps.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT PAGE -->
+    <section id="about" class="page">
+        <div class="about">
+            <h2>About Platform</h2>
+            <p>
+                Full Stack Academy is an e-learning platform designed to help students
+                become professional web developers using practical learning approach. <br><br>
+
+            </p>
+        </div>
+    </section>
+
+    <!-- PLAYER PAGE -->
+    <section id="player" class="page">
+
+        <button class="back-btn" onclick="showPage('courses')">
+            ← Back to Courses
+        </button>
+
+        <div class="player-layout">
+
+            <div class="lesson-bar">
+                <h3 id="courseTitle"></h3>
+                <ul id="lessonList"></ul>
+            </div>
+
+            <div class="video-area">
+                <iframe id="videoPlayer"></iframe>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
